@@ -1,0 +1,37 @@
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<title>Remote</title>
+<script type="application/javascript">
+function next() {
+    var r = new XMLHttpRequest();
+    r.open("POST", location.href + "/next");
+    r.send();
+}
+function back() {
+    var r = new XMLHttpRequest();
+    r.open("POST", location.href + "/back");
+    r.send();
+}
+</script>
+<style>
+.ctrlBtn {
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2em;
+}
+</style>
+</head>
+<body>
+<form action="#">
+<input type="button" style="background-color: lime; font-size: 3em;" class="ctrlBtn" value="Next" onclick="next()"/>
+<br/>
+<input type="button" class="ctrlBtn" value="Back" onclick="back()"/>
+</form>
+</body>
+</html>
